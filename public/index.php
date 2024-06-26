@@ -8,6 +8,8 @@
     <title>Document</title>
 </head>
 <body>
-<h1>Docker Index Html</h1>
+<h1>Docker Index PHP</h1>
+<p><?php echo 'php block'; ?></p>
+<?php phpinfo(); ?>
 </body>
 </html>

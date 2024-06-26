@@ -9,11 +9,16 @@ services:
     volumes:
       - ./:/var/www
       - ./_docker/nginx/conf.d/:/etc/nginx/conf.d/
-
+    depends_on:
+      - php
 
 
   # Application Service
-#  app:
+  php:
+    image: php:8.3-fpm
+    container_name: php
+    volumes:
+      - ./:/var/www
 
   #Database Service
 #  db:

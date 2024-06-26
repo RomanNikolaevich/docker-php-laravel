@@ -1,0 +1,21 @@
+services:
+
+  # Web Server Service
+  nginx:
+    image: nginx:latest
+    container_name: nginx
+    ports:
+      - "8080:80"
+    volumes:
+      - ./:/var/www
+      - ./_docker/nginx/conf.d/:/etc/nginx/conf.d/
+
+
+
+  # Application Service
+#  app:
+
+  #Database Service
+#  db:
+
+

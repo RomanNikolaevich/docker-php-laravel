@@ -21,8 +21,20 @@ services:
     container_name: project-php
     volumes:
       - ./:/var/www
+    depends_on:
+      - db
 
   #Database Service
-#  db:
-
+  db:
+    image: mysql:8.0
+    restart: unless-stopped
+    volumes:
+        - ./tmp/db:/var/lib/mysql
+    environment:
+        MYSQL_DATABASE: lardocker
+        MYSQL_ROOT_PASSWORD: root
+    ports:
+        - 8101:3306
+    command: mysqld --character-set-server=utf8 --collation-server=utf8_unicode_ci
+    container_name: project_db
 

@@ -9,7 +9,7 @@
 </head>
 <body>
 <h1>Docker Index PHP</h1>
-<p><?php echo 'php block'; ?></p>
+<p><?php echo 'php block with Dockerfile'; ?></p>
 <?php phpinfo(); ?>
 </body>
 </html>

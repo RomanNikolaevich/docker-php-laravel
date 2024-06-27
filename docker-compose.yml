@@ -3,20 +3,22 @@ services:
   # Web Server Service
   nginx:
     image: nginx:latest
-    container_name: nginx
+    container_name: project-nginx
     ports:
       - "8080:80"
     volumes:
       - ./:/var/www
       - ./_docker/nginx/conf.d/:/etc/nginx/conf.d/
     depends_on:
-      - php
+      - app
 
 
   # Application Service
-  php:
-    image: php:8.3-fpm
-    container_name: php
+  app:
+    build:
+      context: .
+      dockerfile: _docker/app/Dockerfile
+    container_name: project-php
     volumes:
       - ./:/var/www
 

@@ -1,11 +1,14 @@
 ## Збірка Docker для запуску Laravel
 
 ## Запуск проекта:
-1. Скопіювати цей код в проект з Laravel
+1. Скопіювати цей код в проект з Laravel, папку `public` для Laravel переносити не потрібно
 2. В файлі `.env` `DB_HOST` міняємо на `DB_HOST=db` (Database Service)
-3. Для виконання міграції перейти в контейнер з php та виконати міграцію:
+3. Користувач по замовчуванню `DB_USERNAME=root`, `DB_PASSWORD=root або пустий`, але якщо потрібен інший користувач, 
+то треба його спочатку створити в базі данних та надати йогму права доступу та користування.
+4. Для виконання міграції перейти в контейнер з php та виконати міграцію:
    * `docker exec -it project-php bash`
    * `php artisan migrate`
+5. Якщо потрібна інша версія PHP, то можна вибрати для цієї версії Dockerfile [тут](https://github.com/docker-library/docs/blob/master/php/README.md#supported-tags-and-respective-dockerfile-links)
 
 ## Docker - основні команди:
 

@@ -29,8 +29,8 @@ services:
     image: mysql:8.0
     restart: unless-stopped
     volumes:
-        - "./_docker/db-data/data:/var/lib/mysql"
-        - "./_docker/db-data/logs:/var/log/mysql"
+        - "./database/db-data:/var/lib/mysql"
+        - "./database/db-logs:/var/log/mysql"
     environment:
         MYSQL_DATABASE: "${DB_DATABASE}"
         MYSQL_ROOT_PASSWORD: "${DB_ROOT_PASSWORD}"
